@@ -10,13 +10,24 @@
     // 🐨 Make a function called `message` which returns the JSX we want to share
 
     // 🐨 use that function in place of the divs below with:
-    // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
+    const MessageContainer = ({subject, greeting}) => {
+      return <div className="message">{subject}{' '}{greeting}</div>
+    }
+
+
+    /*const element = (
+      <div className="container">
+        <div>{React.createElement(Message, {children: 'Hello World'})}</div>
+        <div>{React.createElement(Message, {children: 'Goodbye World'})}</div>
+      </div>
+    )*/
+
     const element = (
       <div className="container">
-        <div className="message">Hello World</div>
-        <div className="message">Goodbye World</div>
+        <MessageContainer subject="react" greeting="hello"/>
       </div>
     )
+
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
     ReactDOM.createRoot(document.getElementById('root')).render(element)

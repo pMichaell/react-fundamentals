@@ -18,9 +18,18 @@ const smallBox = <div>small lightblue box</div>
 const mediumBox = <div>medium pink box</div>
 const largeBox = <div>large orange box</div>
 
+const Box = ({size, style, children}) => {
+  return <div className={`box--${size}`} style={style}>
+    {children}
+  </div>
+}
+
 function App() {
   return (
     <div>
+      <Box size='small' style={{backgroundColor: 'palevioletred'}}>
+        small lightblue box
+      </Box>
       {smallBox}
       {mediumBox}
       {largeBox}
